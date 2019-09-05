@@ -57,13 +57,13 @@
     //border: 1px solid;
     margin-right: 46px;
     margin-left: 267px;
-    margin-top: 1%;
+    margin-top: 0%;
 }
 
 .rowFlex{
-    margin-top: 26px;
-    margin-right: 10px;
-    margin-bottom: 15px;
+    margin-top: -196px;
+    margin-right: 0px;
+    margin-bottom: 6px;
     flex-direction: row;
     box-sizing: border-box;
     display: flex;
@@ -73,6 +73,15 @@
 
 .divForLinks{
     border: 1px solid;
+    margin-top: 1%;
+    width: 38%;
+}
+
+.divForTrending{
+    border: 1px solid;
+    margin-top: -10%;
+    width: 23%;
+    margin-left: -57%;
 }
 
 .divForSlider{
@@ -82,4 +91,10 @@
 
 .imgSlider{
     margin-bottom: -4px;
+}
+
+.footers{
+        border: 1px solid;
+        padding: 5%;
+        background-color: rgb(115,201,81);
 }

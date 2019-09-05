@@ -14,10 +14,16 @@ export class DashBoardComponent implements OnInit {
   email = localStorage.getItem('loginmail')
   token = localStorage.getItem('loginToken')
   name = localStorage.getItem('name')
+  imagesUrl: string[];
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
+    this.imagesUrl = [
+      "../../../assets/slider.jpg",
+      '../../../assets/lion_king_xlg.jpg',
+      '../../../assets/terminator.jpg',
+      ];
   }
 
   logout() {

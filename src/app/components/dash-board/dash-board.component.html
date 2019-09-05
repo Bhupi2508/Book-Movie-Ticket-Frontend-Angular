@@ -19,26 +19,50 @@
     </div>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="divForLinks" fxLayout="column" fxLayoutAlign="space-between start">
-        <a routerLink="/home">Home</a>
-        <a routerLink="/categories">Categories</a>
-        <a routerLink="/booking">Booking</a>
-        <a routerLink="/newRelease">New Release</a>
-        <a routerLink="/profile">My Profile</a>
-    </div>
+<mat-card fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-card class="divForLinks" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="3px">
+        <button mat-flat-button="" (click)="home()">Home</button>
+        <button mat-flat-button="" (click)="categories()">Categories</button>
+        <button mat-flat-button="" (click)="booking()">Booking</button>
+        <button mat-flat-button="" (click)="newRelease()">New Release</button>
+        <button mat-flat-button="" (click)="profile()">My Profile</button>
+    </mat-card>
 
     <div class="divForImage" fxLayout="column" fxLayoutGap="30px">
         <div class="divForSlider">
-            <img class="imgSlider" src="../../../assets/slider.jpg">
+            <slideshow [height]="height" [minHeight]="'300px'" [autoPlay]="true" [showArrows]="true" [showDots]="true"
+                [imageUrls]="imagesUrl" [lazyLoad]="imagesUrl?.length > 1" [autoPlayWaitForLazyLoad]="true"
+                [showDots]="true">
+            </slideshow>
+
+            <!-- <angular-image-slider class="imgSlider" [images]="imagesUrl"></angular-image-slider> -->
+            <!-- <img class="imgSlider" src="../../../assets/terminator.jpg"> -->
         </div>
 
+
+        <mat-card class="divForTrending" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="3px">
+            <button mat-flat-button="" (click)="home()">Home</button>
+            <button mat-flat-button="" (click)="categories()">Categories</button>
+            <button mat-flat-button="" (click)="booking()">Booking</button>
+            <button mat-flat-button="" (click)="newRelease()">New Release</button>
+            <button mat-flat-button="" (click)="profile()">My Profile</button>
+        </mat-card>
+
         <div class="rowFlex" fxLayout="row" fxLayoutGap="40px" fxLayoutAlign="end">
-            <img src="../../../assets/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
+            <img
+                src="../../../assets/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
             <img src="../../../assets/53ddb366bdacb6934af4debfe51783ab248988bd-450x656.png">
             <img src="../../../assets/7678e8543f1306a4e99cf83a6918c740.jpg">
             <img src="../../../assets/images (3).jpg">
             <img src="../../../assets//images (2).jpg">
         </div>
+    </div>
+</mat-card>
+
+<div class="footers">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3px" style="margin-top:-6%">
+        <h2>About</h2>
+        <h2>Contacts</h2>
+        <h2>Links</h2>
     </div>
 </div>

@@ -23,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { SliderModule } from 'angular-image-slider';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     BrowserModule,
     MatInputModule,
     AppRoutingModule,
+    SlideshowModule,
     MatMenuModule,
     MatFormFieldModule,
     MatCardModule,
@@ -51,7 +54,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
