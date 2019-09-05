@@ -1,0 +1,30 @@
+<!-- [ngStyle]="{background: 'url('../../../assets/Website-Design-Background.png')'}"> -->
+<mat-card class="card">
+    <b class="login">Login Form</b>
+    <div fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>email</mat-label>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput placeholder="email" [formControl]="email">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>password</mat-label>
+            <mat-error *ngIf="password.invalid">{{passwordError()}}</mat-error>
+            <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
+            <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
+        </mat-form-field>
+
+        <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Login</button>
+
+        <div>
+            <div>
+                <a routerLink="/forgotPassword">Forgot Password?</a><a class="registerLink"
+                    routerLink="/register">Register</a>
+            </div>
+        </div>
+
+
+    </div>
+</mat-card>

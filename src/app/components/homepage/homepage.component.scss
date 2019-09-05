@@ -1,0 +1,53 @@
+.card{
+    width: 100%;
+    //margin-top: 8%;
+    color: rgba(0,0,800,.87);
+    //margin-left: 3%;
+    box-shadow: 0 2px 1px -1px rgba(26, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    padding: -26% !important;
+    flex: auto;
+    min-width: 20px;
+    width: 350px;
+}
+.Dash{
+    display: flex;
+    justify-content: center;
+}
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    /* padding: 16px; */
+    border-radius: 4px;
+}
+
+.main{
+    border: 1px solid;
+    padding: 1%;
+    background-color: rgb(115,201,81);
+}
+
+.image{
+    margin-left: -125px;
+}
+
+.search{
+    position: relative;
+    margin-right: 26%;
+}
+
+.button{
+    margin-right: -55%;
+}
+
+.loginButton{
+    color: navy;
+}
+.login{
+    margin-right: -102%;
+}

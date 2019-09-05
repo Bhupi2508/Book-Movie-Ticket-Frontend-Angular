@@ -1,0 +1,44 @@
+<div class="main" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="image"><img src="../../../assets/IMG-20181122-WA0006.jpg" style="width: 75%">
+    </div>
+    <div class="search" fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <input placeholder="Do Online Booking For Any Movie..." style=" width: 229%; padding: 5%;">
+        </div>
+        <div class="button">
+            <button mat-raised-button color="primary">Search</button>
+        </div>
+        <div class="login">
+            <button mat-mini-fab style="background-color: darkolivegreen" [matMenuTriggerFor]="menu">
+                {{name | slice:0:1}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>{{name}}</button>
+                <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between start">
+    <div class="divForLinks" fxLayout="column" fxLayoutAlign="space-between start">
+        <a routerLink="/home">Home</a>
+        <a routerLink="/categories">Categories</a>
+        <a routerLink="/booking">Booking</a>
+        <a routerLink="/newRelease">New Release</a>
+        <a routerLink="/profile">My Profile</a>
+    </div>
+
+    <div class="divForImage" fxLayout="column" fxLayoutGap="30px">
+        <div class="divForSlider">
+            <img class="imgSlider" src="../../../assets/slider.jpg">
+        </div>
+
+        <div class="rowFlex" fxLayout="row" fxLayoutGap="40px" fxLayoutAlign="end">
+            <img src="../../../assets/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
+            <img src="../../../assets/53ddb366bdacb6934af4debfe51783ab248988bd-450x656.png">
+            <img src="../../../assets/7678e8543f1306a4e99cf83a6918c740.jpg">
+            <img src="../../../assets/images (3).jpg">
+            <img src="../../../assets//images (2).jpg">
+        </div>
+    </div>
+</div>

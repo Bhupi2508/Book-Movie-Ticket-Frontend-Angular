@@ -1,0 +1,42 @@
+<!-- <div [ngStyle]="{background: 'url('../../assets/Website-Design-Background.png')'}"> -->
+<mat-card class="card">
+
+    <b class="register">Register Form</b>
+
+    <div fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>firstname</mat-label>
+            <mat-error *ngIf="firstName.invalid">{{firstNameError()}}</mat-error>
+            <input matInput placeholder="firstname" [formControl]="firstName">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>lastname</mat-label>
+            <mat-error *ngIf="lastName.invalid">{{lastNameError()}}</mat-error>
+            <input matInput placeholder="lastname" [formControl]="lastName">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>email</mat-label>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput placeholder="email" [formControl]="email">
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field-infix" appearance="outline">
+            <mat-label>password</mat-label>
+            <mat-error *ngIf="password.invalid">{{passwordError()}}</mat-error>
+            <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
+            <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
+        </mat-form-field>
+
+        <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Submit</button>
+        <div>
+            <div>
+                <a routerLink="/forgotPassword">Forgot Password?</a><a class="loginLink" routerLink="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<!-- </div> -->

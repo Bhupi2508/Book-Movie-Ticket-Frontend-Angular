@@ -1,0 +1,28 @@
+.card{
+    width: 28%;
+    margin-top: 5%;
+    color: rgba(0,0,800,.87);
+    margin-left: 36%;
+    box-shadow: 0 2px 1px -1px rgba(26, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.7);
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 20px;
+    width: 350px;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+
+.registerLink{
+    margin-left: 169px;
+}
+
+.SubmitButton{
+    margin-bottom: 6%;
+}
