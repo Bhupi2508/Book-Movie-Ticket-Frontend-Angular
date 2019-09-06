@@ -14,8 +14,8 @@ export class RegistrationComponent implements OnInit {
   firstName = new FormControl('', Validators.required);
   lastName = new FormControl('', Validators.required);
   email = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9._]+@[a-zA-Z]+.[a-zA-Z]+$')]);
-  // phone = new FormControl('', [Validators.minLength(10), Validators.maxLength(10), Validators.required, Validators.pattern('[0-9]+')]);
-  date = new FormControl('', Validators.required);
+  phone = new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{10}$/)])
+  dateofbirth = new FormControl('', Validators.required);
   gender = new FormControl('', Validators.required);
   password = new FormControl('', [Validators.minLength(6), Validators.required])
   data: {};
@@ -39,8 +39,12 @@ export class RegistrationComponent implements OnInit {
     return this.email.hasError('required') ? 'You must enter a value' :
       this.email.hasError('pattern') ? 'Not a valid email' : '';
   }
+  mobilenumberError() {
+    return this.phone.hasError('required') ? 'You must enter a value' :
+      this.phone.hasError('pattern') ? 'mobile number should be numeric and length 10' : ''
+  }
   DateOfBirthErrorMessage() {
-    return this.date.hasError('required') ? 'You must enter your Date of Birth' : '';
+    return this.dateofbirth.hasError('required') ? 'You must enter your Date of Birth' : '';
   }
   genderErrorMessage() {
     return this.gender.hasError('required') ? 'You must select a value' : '';
@@ -50,20 +54,16 @@ export class RegistrationComponent implements OnInit {
       this.password.hasError('required') ? 'password cannot be empty' :
         ''
   }
-  // phoneErrorMessage() {
-  //   return this.phone.hasError('length') ? 'phone number should be of 10 digits' :
-  //     this.phone.hasError('pattern') ? 'should be only digits' : ''
-  // }
 
   submit() {
     this.data = {
       firstname: this.firstName.value,
       lastname: this.lastName.value,
       email: this.email.value,
+      phone: this.phone.value,
+      dateofbirth: this.dateofbirth.value,
+      gender: this.gender.value,
       password: this.password.value,
-      // phone: this.phone.value,
-       date: this.date.value,
-      gender: this.gender.value
 
     }
     console.log("Data in submit", this.data)

@@ -21,17 +21,16 @@
                 <input matInput placeholder="email" [formControl]="email">
             </mat-form-field>
 
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>Phone</mat-label>
-                <!-- <mat-error *ngIf="phone.invalid">{{phoneErrorMessage()}}</mat-error> -->
-                <input matInput placeholder="Phone">
-                <mat-icon matSuffix>phone</mat-icon>
-            </mat-form-field>
+                <mat-form-field class="mat-form-field-infix" appearance="outline">
+                    <mat-label>phone</mat-label>
+                    <input matInput placeholder="phone number" [formControl]='phone' required>
+                    <mat-error *ngIf="phone.invalid">{{mobilenumberError()}}</mat-error>
+                </mat-form-field>
 
             <mat-form-field class="mat-form-field-infix" appearance="outline">
                 <mat-label>gender</mat-label>
                 <mat-error *ngIf="gender.invalid">{{genderErrorMessage()}}</mat-error>
-                <mat-select>
+                <mat-select [formControl]='gender'>
                     <mat-option value="male">male</mat-option>
                     <mat-option value="female">female</mat-option>
                     <mat-option value="others">others</mat-option>
@@ -40,8 +39,8 @@
 
             <mat-form-field class="mat-form-field-infix" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
-                <mat-error *ngIf="date.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
-                <input matInput [matDatepicker]="picker" placeholder="date" [formControl]="date">
+                <mat-error *ngIf="dateofbirth.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
+                <input matInput [matDatepicker]="picker" placeholder="dateofbirth" [formControl]="dateofbirth | date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
             </mat-form-field>
@@ -63,35 +62,35 @@
             </div>
         </div>
     </mat-card>
-    <div>
-        <!--Facebook-->
+    <!-- <div>
+        
         <button mdbBtn color="fb" class=" waves-light" mdbWavesEffect>
             <mdb-icon fab icon="facebook-f" class="left"></mdb-icon>
             <span>Facebook</span>
         </button>
-        <!--Twitter-->
+        
         <a mdbBtn color="tw" class=" waves-light" mdbWavesEffect>
             <mdb-icon fab icon="twitter" class="left"></mdb-icon>
             <span>Twitter</span>
         </a>
-        <!--Google +-->
+        
         <a mdbBtn color="gplus" class=" waves-light" mdbWavesEffect>
             <mdb-icon fab icon="google-plus" class="left"></mdb-icon>
             <span>Google+</span>
         </a>
         <span class="counter">22</span>
 
-        <!--Linkedin-->
+        
         <a mdbBtn color="li" class=" waves-light" mdbWavesEffect>
             <mdb-icon fab icon="linkedin-in" class="left"></mdb-icon>
             <span>Linkedin</span>
         </a>
         <span class="counter">22</span>
 
-        <!--Instagram-->
+        
         <a mdbBtn color="ins" class=" waves-light" mdbWavesEffect>
             <mdb-icon fab icon="instagram" class="left"></mdb-icon>
             <span>Instagram</span>
         </a>
-    </div>
+    </div>  -->
 </div>
