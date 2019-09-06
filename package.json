@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~8.2.3",
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
+    "angular-bootstrap-md": "^8.2.0",
     "angular-image-slider": "0.0.8",
     "apollo-angular": "^1.6.0",
     "apollo-angular-link-http": "^1.8.0",

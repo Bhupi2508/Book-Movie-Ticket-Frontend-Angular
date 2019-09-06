@@ -1,42 +1,66 @@
-<!-- <div [ngStyle]="{background: 'url('../../assets/Website-Design-Background.png')'}"> -->
-<mat-card class="card">
+<div [style.backgroundImage]="getBackgroundImageUrl()">
+    <mat-card class="card">
+        <b class="register">Register Form</b>
+        <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="-30px">
+            <!-- <div fxLayout="row" fxLayoutGap="5%"> -->
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>firstname</mat-label>
+                <mat-error *ngIf="firstName.invalid">{{firstNameError()}}</mat-error>
+                <input matInput placeholder="firstname" [formControl]="firstName">
+            </mat-form-field>
 
-    <b class="register">Register Form</b>
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>lastname</mat-label>
+                <mat-error *ngIf="lastName.invalid">{{lastNameError()}}</mat-error>
+                <input matInput placeholder="lastname" [formControl]="lastName">
+            </mat-form-field>
+            <!-- </div> -->
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>email</mat-label>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput placeholder="email" [formControl]="email">
+            </mat-form-field>
 
-    <div fxLayout="column" fxLayoutAlign="space-evenly center">
-        <mat-form-field class="mat-form-field-infix" appearance="outline">
-            <mat-label>firstname</mat-label>
-            <mat-error *ngIf="firstName.invalid">{{firstNameError()}}</mat-error>
-            <input matInput placeholder="firstname" [formControl]="firstName">
-        </mat-form-field>
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <!-- <mat-error *ngIf="phone.invalid">{{phoneErrorMessage()}}</mat-error> -->
+                <input matInput placeholder="Phone">
+                <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field-infix" appearance="outline">
-            <mat-label>lastname</mat-label>
-            <mat-error *ngIf="lastName.invalid">{{lastNameError()}}</mat-error>
-            <input matInput placeholder="lastname" [formControl]="lastName">
-        </mat-form-field>
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>gender</mat-label>
+                <mat-error *ngIf="gender.invalid">{{genderErrorMessage()}}</mat-error>
+                <mat-select>
+                    <mat-option value="male">male</mat-option>
+                    <mat-option value="female">female</mat-option>
+                    <mat-option value="others">others</mat-option>
+                </mat-select>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field-infix" appearance="outline">
-            <mat-label>email</mat-label>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            <input matInput placeholder="email" [formControl]="email">
-        </mat-form-field>
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <mat-error *ngIf="date.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
+                <input matInput [matDatepicker]="picker" placeholder="date" [formControl]="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
 
-        <mat-form-field class="mat-form-field-infix" appearance="outline">
-            <mat-label>password</mat-label>
-            <mat-error *ngIf="password.invalid">{{passwordError()}}</mat-error>
-            <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
-            <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
-            </mat-icon>
-        </mat-form-field>
+            <mat-form-field class="mat-form-field-infix" appearance="outline">
+                <mat-label>password</mat-label>
+                <mat-error *ngIf="password.invalid">{{passwordErrorMessage()}}</mat-error>
+                <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
+                <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+                </mat-icon>
+            </mat-form-field>
 
-        <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Submit</button>
-        <div>
+            <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Submit</button>
             <div>
-                <a routerLink="/forgotPassword">Forgot Password?</a><a class="loginLink" routerLink="/login">Login</a>
+                <div class="ForRouterLinks">
+                    <a routerLink="/forgotPassword">Forgot Password?</a><a class="loginLink"
+                        routerLink="/login">Login</a>
+                </div>
             </div>
         </div>
-    </div>
-</mat-card>
-
-<!-- </div> -->
+    </mat-card>
+</div>
