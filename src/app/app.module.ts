@@ -29,6 +29,7 @@ import { IconsModule } from 'angular-bootstrap-md';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule} from '@angular/material';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatNativeDateModule} from '@angular/material';
     DataDemoComponent,
     DashBoardComponent,
     HomepageComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserAnimationsModule,

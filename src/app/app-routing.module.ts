@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { DataDemoComponent } from './components/data-demo/data-demo.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 const routes: Routes = [{
@@ -36,6 +37,10 @@ const routes: Routes = [{
 {
   path:'homepage',
   component:HomepageComponent
+},
+{
+  path:'profile',
+  component:MyProfileComponent
 }
 ];
 

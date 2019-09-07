@@ -40,7 +40,7 @@
             <mat-form-field class="mat-form-field-infix" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
                 <mat-error *ngIf="dateofbirth.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
-                <input matInput [matDatepicker]="picker" placeholder="dateofbirth" [formControl]="dateofbirth | date">
+                <input matInput [matDatepicker]="picker" placeholder="dateofbirth" [formControl]="dateofbirth">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
             </mat-form-field>
