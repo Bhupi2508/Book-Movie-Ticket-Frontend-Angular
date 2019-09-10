@@ -1,47 +1,72 @@
 <div class="main" fxLayout="row" fxLayoutAlign="space-around center">
     <div class="image"><img src="../../../assets/IMG-20181122-WA0006.jpg" style="width: 75%">
-    </div> 
+    </div>
 </div>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
+<mat-card class="profileNames">
+    <h2>{{firstName}}</h2>
+</mat-card>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> firstName </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{firstName}} </mat-cell>
-    </ng-container>
 
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> lastName </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{lastName}} </mat-cell>
-    </ng-container>
+<div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-card class="divForLinks" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="5px">
+        <button mat-flat-button="" (click)="home()">Home</button>
+        <button mat-flat-button="" (click)="categories()">Categories</button>
+        <button mat-flat-button="" (click)="booking()">Booking</button>
+        <button mat-flat-button="" (click)="newRelease()">New Release</button>
+        <button mat-flat-button="" (click)="newRelease()">Trending</button>
+    </mat-card>
 
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{emailAddress}} </mat-cell>
-    </ng-container>
+    <!-- <mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
 
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> phone </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{phone}} </mat-cell>
-    </ng-container>
+    <div class="forValue">
+        <h3>First Name : {{firstName}}</h3>
+        <h3> Last Name : {{lastName}}</h3><br>
+        <h3> Email : {{emailAddress}}</h3>
+        <h3> Mobile No. : {{phone}}</h3><br>
+        <h3> Gender : {{gender}}</h3>
+        <h3> Date of Birth : {{dateofbirth}}</h3>
 
-    <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> gender </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{gender}} </mat-cell>
-    </ng-container>
+    </div>
 
-    <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Date of Birth </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{dateofbirth}} </mat-cell>
-    </ng-container>
+    <!-- <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef> firstName </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{firstName}} </mat-cell>
+        </ng-container>
 
-     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table> 
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef> lastName </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{lastName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="emailAddress">
+            <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{emailAddress}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef> phone </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{phone}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+            <mat-header-cell *matHeaderCellDef> gender </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{gender}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dateofbirth">
+            <mat-header-cell *matHeaderCellDef> Date of Birth </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{dateofbirth}} </mat-cell>
+        </ng-container> -->
+
+    <!-- <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table> -->
+
+</div>
 
 <div class="footers">
-    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3px" style="margin-top:-6%">
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="10%" style="margin-top:-6%">
         <h2>About</h2>
         <h2>Contacts</h2>
         <h2>Links</h2>

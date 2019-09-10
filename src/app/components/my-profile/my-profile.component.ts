@@ -24,4 +24,8 @@ export class MyProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  home() {
+    this.router.navigateByUrl('');
+  }
+
 }
