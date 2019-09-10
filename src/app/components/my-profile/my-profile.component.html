@@ -1,1 +1,70 @@
-<p>my-profile wo gg g  ggg g g g  gg  grks!</p>
+<div class="main" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="image"><img src="../../../assets/IMG-20181122-WA0006.jpg" style="width: 75%">
+    </div> 
+</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> firstName </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> lastName </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{lastName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{emailAddress}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> phone </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{phone}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> gender </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{gender}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Date of Birth </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{dateofbirth}} </mat-cell>
+    </ng-container>
+
+     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> 
+
+<div class="footers">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3px" style="margin-top:-6%">
+        <h2>About</h2>
+        <h2>Contacts</h2>
+        <h2>Links</h2>
+
+        <!--Facebook-->
+        <a type="button" mdbBtn floating="true" size="lg" color="fb" class="waves-light" mdbWavesEffect>
+            <mdb-icon fab icon="facebook-f"></mdb-icon>
+        </a>
+
+        <!--Google +-->
+        <a type="button" mdbBtn floating="true" size="lg" color="gplus" class=" waves-light" mdbWavesEffect>
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+
+        <!--Linkedin-->
+        <a type="button" mdbBtn floating="true" size="lg" color="li" class=" waves-light" mdbWavesEffect>
+            <mdb-icon fab icon="linkedin-in"></mdb-icon>
+        </a>
+
+        <!--Instagram-->
+        <a type="button" mdbBtn floating="true" size="lg" color="ins" class="  waves-light" mdbWavesEffect>
+            <mdb-icon fab icon="instagram"></mdb-icon>
+        </a>
+
+    </div>
+</div>

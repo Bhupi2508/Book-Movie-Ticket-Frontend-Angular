@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
   emailAddress: any;
   token: any;
   name: any;
+  lastName: any;
+  firstName: any;
+  phone: any;
+  gender: any;
+  dateofbirth: any;
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
@@ -45,11 +50,20 @@ export class LoginComponent implements OnInit {
 
       console.log("loginResponse data==>", result);
       this.emailAddress = result.message[0].email
-      this.name = result.message[0].firstname
-      this.token=result.token
-      localStorage.setItem('loginmail', this.emailAddress)
+      this.firstName = result.message[0].firstname
+      this.lastName = result.message[0].lastname
+      this.phone = result.message[0].phone
+      this.gender = result.message[0].gender
+      this.dateofbirth = result.message[0].dateofbirth
+
+      this.token = result.token
+      localStorage.setItem('emailAddress', this.emailAddress)
       localStorage.setItem('loginToken', this.token)
-      localStorage.setItem('name', this.name)
+      localStorage.setItem('firstName', this.firstName)
+      localStorage.setItem('lastName', this.lastName)
+      localStorage.setItem('phone', this.phone)
+      localStorage.setItem('gender', this.gender)
+      localStorage.setItem('dateofbirth', this.dateofbirth)
       this.snackbar.open('Login Successfull', 'End now', { duration: 1000 });
       this.router.navigateByUrl('');
 

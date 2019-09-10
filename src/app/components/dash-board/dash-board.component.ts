@@ -23,12 +23,16 @@ export class DashBoardComponent implements OnInit {
       "../../../assets/slider.jpg",
       '../../../assets/lion_king_xlg.jpg',
       '../../../assets/terminator.jpg',
-      ];
+    ];
   }
 
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('login');
+  }
+
+  profile() {
+    this.router.navigateByUrl('profile');
   }
 
 }

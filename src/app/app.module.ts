@@ -27,9 +27,11 @@ import { SliderModule } from 'angular-image-slider';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { IconsModule } from 'angular-bootstrap-md';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule} from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     IconsModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

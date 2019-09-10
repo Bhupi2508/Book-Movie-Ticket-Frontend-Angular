@@ -10,6 +10,12 @@ import { Router } from "@angular/router";
   styleUrls: ['./my-profile.component.scss']
 })
 export class MyProfileComponent implements OnInit {
+  emailAddress = localStorage.getItem('emailAddress')
+  firstName = localStorage.getItem('firstName')
+  lastName = localStorage.getItem('lastName')
+  phone = localStorage.getItem('phone')
+  gender = localStorage.getItem('gender')
+  dateofbirth = localStorage.getItem('dateofbirth')
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) {
 
