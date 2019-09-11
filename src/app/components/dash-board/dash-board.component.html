@@ -23,51 +23,62 @@
 <mat-card fxLayout="row" fxLayoutAlign="start start">
     <mat-card class="divForLinks" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="20px">
         <button mat-flat-button="" (click)="home()">Home</button>
-        <button mat-flat-button="" (click)="categories()">Categories</button>
+        <button mat-flat-button="" (click)="profile()">Profile</button>
         <button mat-flat-button="" (click)="booking()">Booking</button>
         <button mat-flat-button="" (click)="newRelease()">New Release</button>
-        <button mat-flat-button="" (click)="profile()">My Profile</button>
+        <button mat-flat-button="" (click)="profile()">Categories</button>
         <button mat-flat-button="" (click)="home()">Movies</button>
         <button mat-flat-button="" (click)="categories()">Series</button>
         <button mat-flat-button="" (click)="booking()">Events</button>
     </mat-card>
 
-    <div class="divForImage" fxLayout="column" fxLayoutGap="30px">
-        <div class="divForSlider">
-            <slideshow [height]="height" [minHeight]="'460px'" [autoPlay]="true" [showArrows]="true" [showDots]="true"
-                [imageUrls]="imagesUrl" [lazyLoad]="imagesUrl?.length > 1" [autoPlayWaitForLazyLoad]="true"
-                [showDots]="true">
-            </slideshow>
+    <!-- 
+        Image size = 380/430
+     -->
+    <div class="divForSlider">
+        <slideshow [height]="height" [minHeight]="'460px'" [autoPlay]="true" [showArrows]="true" [showDots]="true"
+            [imageUrls]="imagesUrl" [lazyLoad]="imagesUrl?.length > 1" [autoPlayWaitForLazyLoad]="true"
+            [showDots]="true">
+        </slideshow>
+    </div>
 
-            <!-- <angular-image-slider class="imgSlider" [images]="imagesUrl"></angular-image-slider> -->
-            <!-- <img class="imgSlider" src="../../../assets/terminator.jpg"> -->
+    <!-- 
+        Image size = 128/170
+     -->
+    <div class="rowFlex" fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="end">
+        <div class="rowFlex" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="end">
+            <a (click)="profile()" class="pointer"><img src="../../../assets/intersteller-small.jpg"></a>
+            <a (click)="profile()" class="pointer"><img src="../../../assets/captainAmerica---small.png"></a>
+            <a (click)="profile()" class="pointer"><img src="../../../assets/captainMarvel---small.jpg"></a>
         </div>
 
-        <!-- <div class="rowFlex" fxLayout="row" fxLayoutGap="40px" fxLayoutAlign="end">
-            <img
-                src="../../../assets/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg">
-            <img src="../../../assets/53ddb366bdacb6934af4debfe51783ab248988bd-450x656.png">
-            <img src="../../../assets/7678e8543f1306a4e99cf83a6918c740.jpg">
-            <img src="../../../assets/images (3).jpg">
-            <img src="../../../assets//images (2).jpg">
-        </div> -->
+        <div class="rowFlex" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="end">
+            <a (click)="profile()" class="pointer"> <img src="../../../assets/images (3).jpg"></a>
+            <a (click)="profile()" class="pointer"><img src="../../../assets/images (2).jpg"></a>
+            <a (click)="profile()" class="pointer"> <img src="../../../assets/batman----1.jpg"></a>
+        </div>
     </div>
+    <!-- </div> -->
 </mat-card>
 
 <div class="footers">
-    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3px" style="margin-top:-6%">
-        <h2>About</h2>
-        <h2>Contacts</h2>
-        <h2>Links</h2>
+    <div fxLayout="row" fxLayout="row" fxLayoutGap="480px" style="margin-top:-6%">
+        <div>
+            <h2>About</h2>
+            <p>BookIt,BandraWest,Mumbai</p>
+            <p>Maharashtra, 400050</p>
+        </div>
+        <div>
+            <h2>Contacts</h2>
+            <p>inquiry@bookIt.com</p>
+        </div>
+        <div>
+            <h2>Links</h2>
+        </div>
 
         <!--Facebook-->
         <a type="button" mdbBtn floating="true" size="lg" color="fb" class="waves-light" mdbWavesEffect>
             <mdb-icon fab icon="facebook-f"></mdb-icon>
-        </a>
-
-        <!--Twitter-->
-        <a type="button" mdbBtn floating="true" size="lg" color="tw" class="waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="twitter"></mdb-icon>
         </a>
 
         <!--Google +-->
@@ -91,14 +102,5 @@
             <mdb-icon fab icon="github"></mdb-icon>
         </a>
 
-        <!--Comments-->
-        <a type="button" mdbBtn floating="true" size="lg" color="comm" class="  waves-light" mdbWavesEffect>
-            <mdb-icon fas icon="comments"></mdb-icon>
-        </a>
-
-        <!--Email-->
-        <a type="button" mdbBtn floating="true" size="lg" color="email" class="  waves-light" mdbWavesEffect>
-            <mdb-icon fas icon="envelope"></mdb-icon>
-        </a>
     </div>
 </div>

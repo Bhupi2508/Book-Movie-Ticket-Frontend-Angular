@@ -32,6 +32,7 @@
     border: 1px solid;
     padding: 1%;
     background-color: rgb(115,201,81);
+    margin-bottom: 1%;
 }
 
 .image{
@@ -57,7 +58,7 @@
 
 .divForImage {
     //border: 1px solid;
-    margin-left: 150px;
+    margin-left: 130px;
     margin-top: 0%;
     width: 30%;
     margin-right: 32%;
@@ -74,8 +75,9 @@
 }
 
 .rowFlex{
-    margin-top: -196px;
-    margin-right: 0px;
+    margin-top: 14px;
+    margin-right: -234px;
+    margin-left: -28%;
     margin-bottom: 6px;
     flex-direction: row;
     box-sizing: border-box;
@@ -92,7 +94,10 @@
 
 .divForSlider{
     border: 2px solid;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+    width: 30%;
+    margin-left: 130px;
+    margin-right: 32%;
 }
 
 .imgSlider{
@@ -100,7 +105,11 @@
 }
 
 .footers{
-        border: 1px solid;
-        padding: 5%;
-        background-color: rgb(115,201,81);
+ border: 1px solid;
+ padding: 5%;
+ background-color: rgb(115,201,81);
+}
+
+.pointer {
+    cursor: pointer;
 }
