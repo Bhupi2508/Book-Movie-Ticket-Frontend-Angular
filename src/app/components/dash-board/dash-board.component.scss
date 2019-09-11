@@ -57,9 +57,20 @@
 
 .divForImage {
     //border: 1px solid;
-    margin-right: 46px;
-    margin-left: 267px;
+    margin-left: 150px;
     margin-top: 0%;
+    width: 30%;
+    margin-right: 32%;
+}
+
+.slideshow-container[_ngcontent-mnn-c5] {
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    min-height: 400%;
 }
 
 .rowFlex{
@@ -76,19 +87,12 @@
 .divForLinks{
     border: 1px solid;
     margin-top: 1%;
-    width: 38%;
-}
-
-.divForTrending{
-    border: 1px solid;
-    margin-top: -10%;
-    width: 23%;
-    margin-left: -57%;
+    width: 16%;
 }
 
 .divForSlider{
     border: 2px solid;
-    margin-bottom: 260px;
+    margin-bottom: 30px;
 }
 
 .imgSlider{

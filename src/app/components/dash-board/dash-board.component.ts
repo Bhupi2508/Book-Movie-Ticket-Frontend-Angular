@@ -9,20 +9,20 @@ import { UserServicesService } from '../../services/userServices/user-services.s
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
-  firstname = localStorage.getItem('firstname')
-  lastname = localStorage.getItem('lastname')
-  email = localStorage.getItem('loginmail')
-  token = localStorage.getItem('loginToken')
-  name = localStorage.getItem('name')
+  firstName = localStorage.getItem('firstName')
+  lastName = localStorage.getItem('lastName')
+  emailAddress = localStorage.getItem('emailAddress')
   imagesUrl: string[];
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
     this.imagesUrl = [
-      "../../../assets/slider.jpg",
-      '../../../assets/lion_king_xlg.jpg',
-      '../../../assets/terminator.jpg',
+      "../../../assets/ant-man-5.jpg",
+      "../../../assets/venom-3.jpg",
+      "../../../assets/HarryPotter-2.jpg",
+      "../../../assets/captain-2.jpg",
+      "../../../assets/blackPanther-1.jpg"
     ];
   }
 
