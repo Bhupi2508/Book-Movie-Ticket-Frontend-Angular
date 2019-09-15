@@ -32,6 +32,8 @@ import { MatNativeDateModule } from '@angular/material';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { MatTableModule } from '@angular/material/table';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     HomepageComponent,
     MyProfileComponent,
     MovieDetailsComponent,
+    CategoriesComponent,
+    NewReleasesComponent,
   ],
   imports: [
     BrowserAnimationsModule,
