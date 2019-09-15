@@ -31,6 +31,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { MatTableModule } from '@angular/material/table';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { MatTableModule } from '@angular/material/table';
     DashBoardComponent,
     HomepageComponent,
     MyProfileComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserAnimationsModule,
