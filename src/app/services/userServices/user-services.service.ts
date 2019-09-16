@@ -11,11 +11,6 @@ export class UserServicesService {
   constructor(private http: HttpClient) { }
 
   post(url, data) {
-    // const httpOption = {
-    //   headers: new HttpHeaders({
-    //     'Authorization': ""
-    //   })
-    // }
     return this.http.post(this.baseUrl + url, data)
   }
 
@@ -26,5 +21,9 @@ export class UserServicesService {
       })
     }
     return this.http.post(this.baseUrl + url, data, httpOption)
+  }
+
+  get(url){
+    return this.http.get(this.baseUrl+url)
   }
 }

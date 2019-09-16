@@ -8,6 +8,8 @@ import { DataDemoComponent } from './components/data-demo/data-demo.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 const routes: Routes = [{
@@ -41,6 +43,14 @@ const routes: Routes = [{
 {
   path:'profile',
   component:MyProfileComponent
+},
+{
+  path:'movieDetail',
+  component:MovieDetailsComponent
+},
+{
+  path:'categorie',
+  component:CategoriesComponent
 }
 ];
 

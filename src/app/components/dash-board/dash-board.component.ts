@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServicesService } from '../../services/userServices/user-services.service'
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-dash-board',
@@ -9,10 +10,13 @@ import { UserServicesService } from '../../services/userServices/user-services.s
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
-  firstName = localStorage.getItem('firstName')
-  lastName = localStorage.getItem('lastName')
-  emailAddress = localStorage.getItem('emailAddress')
   imagesUrl: string[];
+  details: any;
+  releaseDate: any;
+  moviename: any;
+  rating: any;
+  arr = [];
+  @Output() moviesList = new EventEmitter()
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
@@ -35,4 +39,22 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('profile');
   }
 
+  movies() {
+    console.log("egertfS");
+    
+    this.service.get('getMovieDetail').subscribe((result: any) => {
+
+      console.log("response data==>", result);
+      this.moviesList.emit(result.message)
+      // this.moviename = result.message.moviename
+      // this.rating = result.message.rating
+      // this.releaseDate = result.message.releaseDate
+      // this.details = result.message.details
+      // localStorage.setItem('firstname', this.firstname)
+      // localStorage.setItem('lastname', this.lastname)
+      // localStorage.setItem('email', this.emailAddress)
+      // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
+      this.router.navigateByUrl('movieDetail')
+    })
+  }
 }
