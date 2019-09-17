@@ -42,10 +42,10 @@ export class DashBoardComponent implements OnInit {
   movies() {
     console.log("egertfS");
     
-    this.service.get('getMovieDetail').subscribe((result: any) => {
+    this.service.getMethod('getMovieDetail').subscribe((data: any) => {
 
-      console.log("response data==>", result);
-      this.moviesList.emit(result.message)
+      console.log("response data==>", data.result[0].movieName);
+      this.moviesList.emit(data.result[0])
       // this.moviename = result.message.moviename
       // this.rating = result.message.rating
       // this.releaseDate = result.message.releaseDate

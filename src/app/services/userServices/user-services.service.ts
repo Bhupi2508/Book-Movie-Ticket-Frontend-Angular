@@ -23,7 +23,7 @@ export class UserServicesService {
     return this.http.post(this.baseUrl + url, data, httpOption)
   }
 
-  get(url){
+  getMethod(url){
     return this.http.get(this.baseUrl+url)
   }
 }

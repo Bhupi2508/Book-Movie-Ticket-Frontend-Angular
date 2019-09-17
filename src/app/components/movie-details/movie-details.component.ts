@@ -16,5 +16,9 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  submit(){
+    console.log(this.moviesList);
+    
+  }
+  
 }
