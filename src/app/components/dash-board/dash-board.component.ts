@@ -10,6 +10,7 @@ import { EventEmitter } from 'events';
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
+  firstName = localStorage.getItem('firstName')
   imagesUrl: string[];
   details: any;
   releaseDate: any;
@@ -33,7 +34,7 @@ export class DashBoardComponent implements OnInit {
   home() {
     this.router.navigateByUrl('');
   }
-  
+
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('login');
