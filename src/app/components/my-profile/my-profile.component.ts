@@ -27,5 +27,4 @@ export class MyProfileComponent implements OnInit {
   home() {
     this.router.navigateByUrl('');
   }
-
 }

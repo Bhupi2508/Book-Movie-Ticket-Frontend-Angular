@@ -30,6 +30,10 @@ export class DashBoardComponent implements OnInit {
     ];
   }
 
+  home() {
+    this.router.navigateByUrl('');
+  }
+  
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('login');

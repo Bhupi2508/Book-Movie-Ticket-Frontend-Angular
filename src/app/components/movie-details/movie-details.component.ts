@@ -10,15 +10,16 @@ import { Router } from "@angular/router";
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  @Input() moviesList:any[]
+  @Input() moviesList: any[]
 
   constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
   }
-  submit(){
-    console.log(this.moviesList);
-    
+  submit($event) {
+    this.moviesList = $event
+    console.log("ghghgtdrghh",this.moviesList);
+
   }
-  
+
 }
