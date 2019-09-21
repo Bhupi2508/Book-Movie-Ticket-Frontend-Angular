@@ -27,4 +27,8 @@ export class MyProfileComponent implements OnInit {
   home() {
     this.router.navigateByUrl('');
   }
+
+  categorie(){
+    this.router.navigateByUrl('categorie');
+  }
 }

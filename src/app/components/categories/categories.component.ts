@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserServicesService } from '../../services/userServices/user-services.service'
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
   }
 
+  home() {
+    this.router.navigateByUrl('');
+  }
 }

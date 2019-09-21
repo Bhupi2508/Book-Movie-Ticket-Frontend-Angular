@@ -44,6 +44,10 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('profile');
   }
 
+  categorie(){
+    this.router.navigateByUrl('categorie');
+  }
+
   movies() {
     console.log("egertfS");
     
