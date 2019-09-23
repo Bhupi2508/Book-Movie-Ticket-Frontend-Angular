@@ -13,44 +13,44 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 
 
 const routes: Routes = [{
-  path:'register',
-  component:RegistrationComponent
+  path: 'register',
+  component: RegistrationComponent
 },
 {
-  path:'login',
-  component:LoginComponent
+  path: 'login',
+  component: LoginComponent
 },
 {
-  path:'forgotPassword',
-  component:ForgotPasswordComponent
+  path: 'forgotPassword',
+  component: ForgotPasswordComponent
 },
 {
-  path:'resetPassword/:token',
-  component:ResetPasswordComponent
+  path: 'resetPassword/:token',
+  component: ResetPasswordComponent
 },
 {
-  path:'data',
-  component:DataDemoComponent
+  path: 'data',
+  component: DataDemoComponent
 },
 {
-  path:'',
-  component:DashBoardComponent
+  path: '',
+  component: DashBoardComponent
 },
 {
-  path:'homepage',
-  component:HomepageComponent
+  path: 'homepage',
+  component: HomepageComponent
 },
 {
-  path:'profile',
-  component:MyProfileComponent
+  path: 'profile',
+  component: MyProfileComponent
 },
 {
-  path:'movieDetail',
-  component:MovieDetailsComponent
+  path: 'movieDetail',
+  component: MovieDetailsComponent
 },
 {
-  path:'categorie',
-  component:CategoriesComponent
+  path: 'categorie',
+  component: CategoriesComponent
 }
 ];
 

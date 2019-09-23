@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  baseUrl:'http://localhost:4000/'
+  baseUrl:'http://localhost:4000/',
+  baseUrl1:'http://digital-gatekeeper-cbx-cibc-inst1.isvapps02.netmagicsolutions.com/quest/graphql'
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

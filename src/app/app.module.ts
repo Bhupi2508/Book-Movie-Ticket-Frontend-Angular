@@ -35,7 +35,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 
-
+import {environment} from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +85,7 @@ export class AppModule {
     httpLink: HttpLink
   ) {
     apollo.create({
-      link: httpLink.create({ uri: 'http://digital-gatekeeper-cbx-cibc-inst1.isvapps02.netmagicsolutions.com/quest/graphql' }),
+      link: httpLink.create({ uri: environment.baseUrl1 }),
       cache: new InMemoryCache()
     });
   }
