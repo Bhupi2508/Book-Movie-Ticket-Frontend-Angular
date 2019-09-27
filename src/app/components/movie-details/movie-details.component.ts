@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserServicesService } from '../../services/userServices/user-services.service'
+import { UserServicesService } from '../../services/userServices/user-services.service';
+import { DataServicesService } from "../../services/dataServices/data-services.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,16 +11,20 @@ import { Router } from "@angular/router";
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  @Input() moviesList: any[]
+  message: any
 
-  constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
+  constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
-  submit($event) {
-    this.moviesList = $event
-    console.log("ghghgtdrghh",this.moviesList);
 
+  home() {
+    this.router.navigateByUrl('');
+  }
+
+  submit() {
+    this.data.changeMessage("Hello from Sibling")
   }
 
 }

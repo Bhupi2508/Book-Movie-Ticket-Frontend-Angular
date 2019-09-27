@@ -1,8 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserServicesService } from '../../services/userServices/user-services.service'
-import { EventEmitter } from 'events';
+import { UserServicesService } from '../../services/userServices/user-services.service';
+import { DataServicesService } from "../../services/dataServices/data-services.service";
 
 @Component({
   selector: 'app-dash-board',
@@ -17,9 +17,10 @@ export class DashBoardComponent implements OnInit {
   moviename: any;
   rating: any;
   arr = [];
-  @Output() moviesList = new EventEmitter()
 
-  constructor(private service: UserServicesService, private snackbar: MatSnackBar, private router: Router) { }
+  message: string;
+
+  constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
     this.imagesUrl = [
@@ -29,6 +30,8 @@ export class DashBoardComponent implements OnInit {
       "../../../assets/captain-2.jpg",
       "../../../assets/blackPanther-1.jpg"
     ];
+
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
 
   home() {
@@ -44,17 +47,16 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('profile');
   }
 
-  categorie(){
+  categorie() {
     this.router.navigateByUrl('categorie');
   }
 
   movies() {
     console.log("egertfS");
-    
+
     this.service.getMethod('getMovieDetail').subscribe((data: any) => {
 
       console.log("response data==>", data.result[0].movieName);
-      this.moviesList.emit(data.result[0])
       // this.moviename = result.message.moviename
       // this.rating = result.message.rating
       // this.releaseDate = result.message.releaseDate
