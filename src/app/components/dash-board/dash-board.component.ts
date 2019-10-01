@@ -18,8 +18,6 @@ export class DashBoardComponent implements OnInit {
   rating: any;
   arr = [];
 
-  message: string;
-
   constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
@@ -31,7 +29,7 @@ export class DashBoardComponent implements OnInit {
       "../../../assets/blackPanther-1.jpg"
     ];
 
-    this.data.currentMessage.subscribe(message => this.message = message)
+   // this.data.currentMessage.subscribe(message => this.message = message)
   }
 
   home() {
@@ -57,6 +55,7 @@ export class DashBoardComponent implements OnInit {
     this.service.getMethod('getMovieDetail').subscribe((data: any) => {
 
       console.log("response data==>", data.result[0].movieName);
+      this.data.changeMessage(data);
       // this.moviename = result.message.moviename
       // this.rating = result.message.rating
       // this.releaseDate = result.message.releaseDate

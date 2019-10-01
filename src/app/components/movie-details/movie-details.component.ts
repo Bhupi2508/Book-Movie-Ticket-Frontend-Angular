@@ -11,20 +11,20 @@ import { Router } from "@angular/router";
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  message: any
-
+  message:any;
   constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message)
+    this.data.currentMessage.subscribe(message => {
+      this.message = message
+    }
+      )
+    console.log("get message ", this.message);
+
   }
 
   home() {
     this.router.navigateByUrl('');
-  }
-
-  submit() {
-    this.data.changeMessage("Hello from Sibling")
   }
 
 }
