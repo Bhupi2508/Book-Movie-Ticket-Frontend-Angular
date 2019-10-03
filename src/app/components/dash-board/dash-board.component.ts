@@ -26,7 +26,10 @@ export class DashBoardComponent implements OnInit {
       "../../../assets/venom-3.jpg",
       "../../../assets/HarryPotter-2.jpg",
       "../../../assets/captain-2.jpg",
-      "../../../assets/blackPanther-1.jpg"
+      "../../../assets/blackPanther-1.jpg",
+      "../../../assets/jokerForSlide.jpg",
+      "../../../assets/TheMartianForSlider.jpg",
+      "../../../assets/warForSlide-1.jpg"
     ];
 
     // this.data.currentMessage.subscribe(message => this.message = message)
@@ -49,34 +52,41 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('categorie');
   }
 
-  movies(war) {
-    console.log("egertfS", war);
+  movies() {
 
     this.service.getMethod('getMovieDetail').subscribe((data: any) => {
       console.log("length", data.result.length);
 
+      // for (let i = 0; i <= data.result.length; i++) {
+      localStorage.setItem('War', data.result[0].movieName)
+      localStorage.setItem('Captain America', data.result[1].movieName)
+      localStorage.setItem('Intersteller', data.result[2].movieName)
+      localStorage.setItem('Captain Marval', data.result[3].movieName)
+      localStorage.setItem('Batman', data.result[4].movieName)
+      localStorage.setItem('Badla', data.result[5].movieName)
+      localStorage.setItem('WarPoster', data.result[0].poster)
+      localStorage.setItem('CaptainAmericaPoster', data.result[1].poster)
+      localStorage.setItem('InterstellerPoster', data.result[2].poster)
+      localStorage.setItem('CaptainMarvalPoster', data.result[3].poster)
+      localStorage.setItem('BatmanPoster', data.result[4].poster)
+      localStorage.setItem('BadlaPoster', data.result[5].poster)
 
+      // if (war === data.result.movieName) {
+      this.data.changeMessage(data);
+      this.router.navigateByUrl('movieDetail')
+      //  console.log("response data==>", data.result[i].movieName);
+      // console.log("response data==>", typeof (data));
+      // }
+      // this.moviename = result.message.moviename
+      // this.rating = result.message.rating
+      // this.releaseDate = result.message.releaseDate
+      // this.details = result.message.details
+      // localStorage.setItem('firstname', this.firstname)
+      // localStorage.setItem('lastname', this.lastname)
+      // localStorage.setItem('email', this.emailAddress)
+      // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
 
-      for (let i = 0; i <= data.result.length; i++) {
-        localStorage.setItem('moviename', data.result[i].movieName)
-        console.log("warv : ", war);
-
-        // if (war === data.result.movieName) {
-        this.data.changeMessage(data);
-        this.router.navigateByUrl('movieDetail')
-        //  console.log("response data==>", data.result[i].movieName);
-        // console.log("response data==>", typeof (data));
-        // }
-        // this.moviename = result.message.moviename
-        // this.rating = result.message.rating
-        // this.releaseDate = result.message.releaseDate
-        // this.details = result.message.details
-        // localStorage.setItem('firstname', this.firstname)
-        // localStorage.setItem('lastname', this.lastname)
-        // localStorage.setItem('email', this.emailAddress)
-        // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
-
-      }
+      // }
     })
   }
 }
