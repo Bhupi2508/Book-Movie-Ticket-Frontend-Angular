@@ -6,7 +6,7 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between start" fxFill="10" fxLayoutGap="50px">
     <mat-card class="poster">
-        <img src="../../../assets/ant-man(Poster).jpg">
+        <img src="../../../assets/{{message.result[4].poster}}">
     </mat-card>
 
     <div class="Details">
@@ -14,7 +14,7 @@
         <h3>Movie Rating : {{message.result[0].rating}} </h3>
         <h3>Date on Release : {{message.result[0].releaseDate}} </h3>
         <h3>Director Name : {{message.result[0].directorName}}</h3>
-        <h3>Cast : {{message.result[0].castName}}</h3>
+        <h3>Cast : {{message.result[3].castName}}</h3>
     </div>
     <!-- <button (click)="submit($event)">type</button> -->
 </div>

@@ -29,7 +29,7 @@ export class DashBoardComponent implements OnInit {
       "../../../assets/blackPanther-1.jpg"
     ];
 
-   // this.data.currentMessage.subscribe(message => this.message = message)
+    // this.data.currentMessage.subscribe(message => this.message = message)
   }
 
   home() {
@@ -49,22 +49,34 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('categorie');
   }
 
-  movies() {
-    console.log("egertfS");
+  movies(war) {
+    console.log("egertfS", war);
 
     this.service.getMethod('getMovieDetail').subscribe((data: any) => {
+      console.log("length", data.result.length);
 
-      console.log("response data==>", data.result[0].movieName);
-      this.data.changeMessage(data);
-      // this.moviename = result.message.moviename
-      // this.rating = result.message.rating
-      // this.releaseDate = result.message.releaseDate
-      // this.details = result.message.details
-      // localStorage.setItem('firstname', this.firstname)
-      // localStorage.setItem('lastname', this.lastname)
-      // localStorage.setItem('email', this.emailAddress)
-      // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
-      this.router.navigateByUrl('movieDetail')
+
+
+      for (let i = 0; i <= data.result.length; i++) {
+        localStorage.setItem('moviename', data.result[i].movieName)
+        console.log("warv : ", war);
+
+        // if (war === data.result.movieName) {
+        this.data.changeMessage(data);
+        this.router.navigateByUrl('movieDetail')
+        //  console.log("response data==>", data.result[i].movieName);
+        // console.log("response data==>", typeof (data));
+        // }
+        // this.moviename = result.message.moviename
+        // this.rating = result.message.rating
+        // this.releaseDate = result.message.releaseDate
+        // this.details = result.message.details
+        // localStorage.setItem('firstname', this.firstname)
+        // localStorage.setItem('lastname', this.lastname)
+        // localStorage.setItem('email', this.emailAddress)
+        // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
+
+      }
     })
   }
 }

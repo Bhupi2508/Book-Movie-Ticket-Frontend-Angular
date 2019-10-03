@@ -10,7 +10,8 @@ import { Router } from "@angular/router";
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.scss']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit { 
+  movieName = localStorage.getItem('moviename')
   message:any;
   constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
