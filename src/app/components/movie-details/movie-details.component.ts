@@ -29,8 +29,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit() {
     this.data.currentMessage.subscribe(message => {
       this.message = message
-    }
-    )
+    })
     console.log("get message ", this.message);
 
   }
