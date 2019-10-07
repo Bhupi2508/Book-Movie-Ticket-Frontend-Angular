@@ -7,6 +7,7 @@ import { environment } from '../../../environments/environment'
 })
 export class UserServicesService {
   baseUrl = environment.baseUrl
+  value: string;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,15 @@ export class UserServicesService {
     return this.http.post(this.baseUrl + url, data, httpOption)
   }
 
-  getMethod(url){
-    return this.http.get(this.baseUrl+url)
+  moviePost(url, data) {
+    console.log("url : ", url);
+    console.log("data : ", data);
+    this.value = "movieName"
+
+    return this.http.post(this.baseUrl + url, this.value + data)
+  }
+
+  getMethod(url) {
+    return this.http.get(this.baseUrl + url)
   }
 }

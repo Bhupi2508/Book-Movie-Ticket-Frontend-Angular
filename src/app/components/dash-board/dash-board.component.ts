@@ -14,9 +14,9 @@ export class DashBoardComponent implements OnInit {
   imagesUrl: string[];
   details: any;
   releaseDate: any;
-  moviename: any;
   rating: any;
   arr = [];
+  body = {};
 
   constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
 
@@ -52,41 +52,30 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('categorie');
   }
 
-  movies() {
-
-    this.service.getMethod('getMovieDetail').subscribe((data: any) => {
-      console.log("length", data.result.length);
+  movies(test) {
+    console.log("args" + test);
+    this.data = test
+    console.log("this.data", { "movieName": this.body });
+    this.service.moviePost('getMovie', this.data).subscribe((data: any) => {
+      console.log("length", data);
 
       // for (let i = 0; i <= data.result.length; i++) {
-      localStorage.setItem('War', data.result[0].movieName)
-      localStorage.setItem('Captain America', data.result[1].movieName)
-      localStorage.setItem('Intersteller', data.result[2].movieName)
-      localStorage.setItem('Captain Marval', data.result[3].movieName)
-      localStorage.setItem('Batman', data.result[4].movieName)
-      localStorage.setItem('Badla', data.result[5].movieName)
-      localStorage.setItem('WarPoster', data.result[0].poster)
-      localStorage.setItem('CaptainAmericaPoster', data.result[1].poster)
-      localStorage.setItem('InterstellerPoster', data.result[2].poster)
-      localStorage.setItem('CaptainMarvalPoster', data.result[3].poster)
-      localStorage.setItem('BatmanPoster', data.result[4].poster)
-      localStorage.setItem('BadlaPoster', data.result[5].poster)
+      // localStorage.setItem('War', data.result[0].movieName)
+      // localStorage.setItem('Captain America', data.result[1].movieName)
+      // localStorage.setItem('Intersteller', data.result[2].movieName)
+      // localStorage.setItem('Captain Marval', data.result[3].movieName)
+      // localStorage.setItem('Batman', data.result[4].movieName)
+      // localStorage.setItem('Badla', data.result[5].movieName)
+      // localStorage.setItem('WarPoster', data.result[0].poster)
+      // localStorage.setItem('CaptainAmericaPoster', data.result[1].poster)
+      // localStorage.setItem('InterstellerPoster', data.result[2].poster)
+      // localStorage.setItem('CaptainMarvalPoster', data.result[3].poster)
+      // localStorage.setItem('BatmanPoster', data.result[4].poster)
+      // localStorage.setItem('BadlaPoster', data.result[5].poster)
 
-      // if (war === data.result.movieName) {
       this.data.changeMessage(data);
       this.router.navigateByUrl('movieDetail')
-      //  console.log("response data==>", data.result[i].movieName);
-      // console.log("response data==>", typeof (data));
-      // }
-      // this.moviename = result.message.moviename
-      // this.rating = result.message.rating
-      // this.releaseDate = result.message.releaseDate
-      // this.details = result.message.details
-      // localStorage.setItem('firstname', this.firstname)
-      // localStorage.setItem('lastname', this.lastname)
-      // localStorage.setItem('email', this.emailAddress)
-      // this.snackbar.open('Registration Successfull', 'End now', { duration: 1000 });
 
-      // }
     })
   }
 }
