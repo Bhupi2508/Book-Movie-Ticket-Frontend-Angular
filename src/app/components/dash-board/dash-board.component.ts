@@ -53,10 +53,14 @@ export class DashBoardComponent implements OnInit {
   }
 
   movies(test) {
-    console.log("args" + test);
-    this.data = test
-    console.log("this.data", { "movieName": this.body });
-    this.service.moviePost('getMovie', this.data).subscribe((data: any) => {
+    // this.data = {
+    //   movieName: test
+    // }
+    const requestObj = {
+      movieName: test
+    };
+    // var a = JSON.stringify(requestObj)
+    this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
       console.log("length", data);
 
       // for (let i = 0; i <= data.result.length; i++) {
