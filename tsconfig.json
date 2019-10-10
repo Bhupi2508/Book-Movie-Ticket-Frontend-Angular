@@ -1,4 +1,7 @@
 {
+  "permissions": [
+    "https://www.google.com/"
+  ],
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",

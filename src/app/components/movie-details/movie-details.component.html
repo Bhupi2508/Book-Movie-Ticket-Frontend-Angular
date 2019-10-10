@@ -15,11 +15,16 @@
         <h3>Date on Release : {{message.result[0].releaseDate}} </h3>
         <h3>Director Name : {{message.result[0].directorName}}</h3>
         <h3>Cast : {{message.result[0].castName}}</h3>
+        <div fxLayout="row" fxLayoutGap="30px">
+            <button class="SubmitButton" mat-raised-button color="primary" (click)="openDialog()">Trailer</button>
+            <button class="SubmitButton" mat-raised-button color="primary" (click)="bookTicket()">Book Ticket</button>
+        </div>
     </div>
+
     <!-- <button (click)="submit($event)">type</button> -->
 </div>
 
-<div class="about" fxLayout="row" fxLayoutGap="5px"> 
+<div class="about" fxLayout="row" fxLayoutGap="5px">
     <h3>About</h3>
     <h3>:</h3>
     <h3>{{message.result[0].details}} </h3>

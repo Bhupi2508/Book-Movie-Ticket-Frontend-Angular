@@ -34,8 +34,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
+import { MatDialogModule } from '@angular/material/dialog';
+//import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 
-import {environment} from '../environments/environment'
+import { environment } from '../environments/environment';
+import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dialog.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +54,11 @@ import {environment} from '../environments/environment'
     MovieDetailsComponent,
     CategoriesComponent,
     NewReleasesComponent,
+    TrailerDialogComponent,
   ],
+
+  entryComponents: [TrailerDialogComponent],
+
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -74,7 +82,12 @@ import {environment} from '../environments/environment'
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
+    //NgZorroAntdModule,
+    // NZ_I18N,
+    // en_US
+
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

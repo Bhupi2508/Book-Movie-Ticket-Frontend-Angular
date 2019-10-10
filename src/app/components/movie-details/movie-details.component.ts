@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServicesService } from '../../services/userServices/user-services.service';
 import { DataServicesService } from "../../services/dataServices/data-services.service";
 import { Router } from "@angular/router";
+import { TrailerDialogComponent } from '../trailer-dialog/trailer-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-details',
@@ -24,7 +26,7 @@ export class MovieDetailsComponent implements OnInit {
   // BatmanhPicture = localStorage.getItem('BatmanPoster');
   // BadlaPicture = localStorage.getItem('BadlaPoster');
   message: any;
-  constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router) { }
+  constructor(private service: UserServicesService, private data: DataServicesService, private snackbar: MatSnackBar, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.data.currentMessage.subscribe(message => {
@@ -38,4 +40,27 @@ export class MovieDetailsComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
+  // trailer() {
+  //   const requestObj = {
+  //     movieName: this.message.result[0].movieName
+  //   }
+  //   this.service.moviePost('getTrailer', requestObj).subscribe((data: any) => {
+  //     console.log("data : ", data);
+  //   })
+  // }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(TrailerDialogComponent, {
+      width: '250px',
+      data: { trailer: this.message.result[0].trailer, movieName: this.message.result[0].movieName }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
+  }
+
+  bookTicket() {
+
+  }
 }
