@@ -36,6 +36,12 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { MatDialogModule } from '@angular/material/dialog';
 //import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { ButtonsModule, InputsModule } from 'angular-bootstrap-md';
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { ShareButtonModule } from '@ngx-share/button';
+
+
+import { ShareModule } from '@ngx-share/core';
 
 import { environment } from '../environments/environment';
 import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dialog.component'
@@ -83,7 +89,12 @@ import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dial
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    ButtonsModule,
+    InputsModule,
+    ShareButtonsModule,
+    ShareModule,
+    ShareButtonModule
     //NgZorroAntdModule,
     // NZ_I18N,
     // en_US

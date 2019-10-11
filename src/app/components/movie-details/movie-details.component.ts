@@ -51,7 +51,7 @@ export class MovieDetailsComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TrailerDialogComponent, {
-      width: '1000px',
+      width: '960px',
       data: { trailer: this.message.result[0].trailer, movieName: this.message.result[0].movieName }
     });
 

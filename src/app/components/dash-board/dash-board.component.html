@@ -1,6 +1,6 @@
 <div class="main" fxLayout="row" fxLayoutAlign="space-around center">
     <div class="image"> <a (click)="home()" class="pointer"><img src="../../../assets/book-it.jpg"
-            style="width: 75%"></a>
+                style="width: 75%"></a>
     </div>
 
     <div class="search" fxLayout="row" fxLayoutAlign="space-between center">
@@ -49,12 +49,14 @@
     <div class="rowFlex" fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="end">
         <div class="rowFlex" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="end">
             <a (click)="movies('War')" class="pointer"><img src="../../../assets/war--1.jpg"></a>
-            <a (click)="movies('CaptainAmerica')" class="pointer"><img src="../../../assets/captainAmerica---small.png"></a>
+            <a (click)="movies('CaptainAmerica')" class="pointer"><img
+                    src="../../../assets/captainAmerica---small.png"></a>
             <a (click)="movies('Interstellar')" class="pointer"><img src="../../../assets//intersteller-small.jpg"></a>
         </div>
 
         <div class="rowFlex" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="end">
-            <a (click)="movies('Captain Marvel')" class="pointer"> <img src="../../../assets/captainMarvel---small.jpg"></a>
+            <a (click)="movies('Captain Marvel')" class="pointer"> <img
+                    src="../../../assets/captainMarvel---small.jpg"></a>
             <a (click)="movies('Batman')" class="pointer"><img src="../../../assets/batman----1.jpg"></a>
             <a (click)="movies('Badla')" class="pointer"> <img src="../../../assets/images (3).jpg"></a>
         </div>
@@ -75,40 +77,10 @@
         </div>
         <div>
             <h2>Links</h2>
-            <!-- <mat-icon>facebook</mat-icon>
-            <mat-icon>Facebook</mat-icon>
-            <mat-icon>Facebook</mat-icon>
-            <mat-icon>Facebook</mat-icon>
-            <!-- <button (click)="socialSignIn('facebook')">Sign in with Facebook</button> -->
-            <i nz-icon nzType="instagram" nzTheme="outline"></i> -->
+            <share-buttons show="3"></share-buttons>
+
+            
         </div>
-
-        <!--Facebook-->
-      
-        <a type="button" mdbBtn floating="true" size="lg" color="fb" class="waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="facebook-f"></mdb-icon>
-        </a>
-
-        <!--Google +-->
-        <a type="button" mdbBtn floating="true" size="lg" color="gplus" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="google-plus"></mdb-icon>
-        </a>
-
-        <!--Linkedin-->
-        <a type="button" mdbBtn floating="true" size="lg" color="li" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="linkedin-in"></mdb-icon>
-        </a>
-
-        <!--Instagram-->
-        <a type="button" mdbBtn floating="true" size="lg" color="ins" class="  waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="instagram"></mdb-icon>
-        </a>
-
-
-        <!--Github-->
-        <a type="button" mdbBtn floating="true" size="lg" color="git" class="  waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="github"></mdb-icon>
-        </a>
 
     </div>
 </div>
