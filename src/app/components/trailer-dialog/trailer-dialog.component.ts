@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class TrailerDialogComponent implements OnInit {
    videoUrl:any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,public sanitizer: DomSanitizer) { 
+    
    this.videoUrl=this.data.trailer
   }
   //console.log(this.data);
