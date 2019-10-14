@@ -10,6 +10,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { BookTicketComponent } from './components/book-ticket/book-ticket.component';
 
 
 const routes: Routes = [{
@@ -51,6 +52,10 @@ const routes: Routes = [{
 {
   path: 'categorie',
   component: CategoriesComponent
+},
+{
+  path: 'bookTicket',
+  component:BookTicketComponent
 }
 ];
 

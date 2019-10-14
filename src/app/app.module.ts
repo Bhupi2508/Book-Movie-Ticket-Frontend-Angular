@@ -44,7 +44,8 @@ import { ShareButtonModule } from '@ngx-share/button';
 import { ShareModule } from '@ngx-share/core';
 
 import { environment } from '../environments/environment';
-import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dialog.component'
+import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dialog.component';
+import { BookTicketComponent } from './components/book-ticket/book-ticket.component'
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dial
     CategoriesComponent,
     NewReleasesComponent,
     TrailerDialogComponent,
+    BookTicketComponent,
   ],
 
   entryComponents: [TrailerDialogComponent],

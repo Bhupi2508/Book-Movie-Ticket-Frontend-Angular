@@ -60,7 +60,7 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  bookTicket() {
-
+  Ticket() {
+    this.router.navigateByUrl('bookTicket');
   }
 }

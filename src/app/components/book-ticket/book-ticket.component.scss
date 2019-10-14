@@ -1,0 +1,181 @@
+.card{
+    width: 100%;
+    //margin-top: 8%;
+    color: rgba(0,0,800,.87);
+    //margin-left: 3%;
+    box-shadow: 0 2px 1px -1px rgba(26, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    padding: -26% !important;
+    flex: auto;
+    min-width: 20px;
+    width: 350px;
+}
+
+// .screen{
+//     border: 1px solid;
+//     width: 94%;
+//     margin-left: 3%;
+//     margin-top: 2%;
+// }
+
+.profileNames{
+    margin-right: -156%;
+    width: 98%;
+    display: flex;
+    padding: 1%;
+    justify-content: inherit;
+    margin-top: 1%;
+    background-color: mediumaquamarine;
+}
+
+.login{
+    margin-right: -156%;
+}
+
+.Dash{
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    /* padding: 16px; */
+    border-radius: 4px;
+}
+
+.main{
+    border: 1px solid;
+    padding: 1%;
+    background-color: rgb(115,201,81);
+    margin-bottom: 1%;
+}
+
+.image{
+    margin-left: -125px;
+}
+
+.search{
+    position: relative;
+    margin-right: 26%;
+}
+
+.button{
+    margin-right: -19%;
+}
+
+body
+{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#Username
+{
+  border:none;
+  border-bottom:1px solid;
+}
+
+.screen
+{
+  width:100%;
+  height:20px;
+  background:#4388cc;
+  color:#fff;
+  line-height:20px;
+  font-size:15px;
+}
+
+.smallBox::before
+{
+  content:".";
+  width:15px;
+  height:15px;
+  float:left;
+  margin-right:10px;
+}
+.greenBox::before
+{
+  content:"";
+  background:Green;
+}
+.redBox::before
+{
+  content:"";
+  background:Red;
+}
+.emptyBox::before
+{
+  content:".";
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    background-color:#ccc;
+}
+
+.seats
+{
+  border:1px solid red;background:yellow;
+} 
+
+
+
+.seatGap
+{
+  width:40px;
+}
+
+.seatVGap
+{
+  height:40px;
+}
+
+table
+{
+  text-align:center;
+}
+
+
+.Displaytable
+{
+  text-align:center;
+}
+.Displaytable td, .Displaytable th {
+    border: 1px solid;
+    text-align: left;
+}
+
+textarea
+{
+  border:none;
+  background:transparent;
+}
+
+
+
+input[type=checkbox] {
+    width:0px;
+    margin-right:18px;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align:middle;
+    text-align: center;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    background-color:#ccc;
+}
+
+input[type=checkbox]:checked:before {
+    background-color:Green;
+    font-size: 15px;
+}
+
+.pointer {
+    cursor: pointer;
+}
