@@ -15,12 +15,21 @@
     width: 350px;
 }
 
-// .screen{
-//     border: 1px solid;
-//     width: 94%;
-//     margin-left: 3%;
-//     margin-top: 2%;
-// }
+.abc{
+    margin-left: -77%;
+    margin-top: 6%;
+}
+
+.def{
+    margin-left: 64%
+}
+
+.seat{
+    margin-left: 37%;
+    margin-top: 9%;
+    border: solid 2px;
+    max-width: max-content;
+}
 
 .profileNames{
     margin-right: -156%;
@@ -28,7 +37,7 @@
     display: flex;
     padding: 1%;
     justify-content: inherit;
-    margin-top: 1%;
+    margin-top: 0%;
     background-color: mediumaquamarine;
 }
 
@@ -82,12 +91,15 @@ body
 
 .screen
 {
-  width:100%;
-  height:20px;
-  background:#4388cc;
-  color:#fff;
-  line-height:20px;
-  font-size:15px;
+    //margin-left: 31%;
+    margin-top: 3%;
+    width: 100%;
+    height: 20px;
+    background: #4388cc;
+    color: #fff;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .smallBox::before
@@ -179,3 +191,9 @@ input[type=checkbox]:checked:before {
 .pointer {
     cursor: pointer;
 }
+
+.footers{
+    border: 1px solid;
+    padding: 3%;
+    background-color: rgb(115,201,81);
+   }
