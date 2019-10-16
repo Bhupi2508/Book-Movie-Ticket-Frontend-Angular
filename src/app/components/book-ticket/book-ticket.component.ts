@@ -19,7 +19,7 @@ export class BookTicketComponent implements OnInit {
 
   takeData() {
     {
-      if (("#Numseats").valueOf().length == 0)) {
+      if (("#Numseats").valueOf().length == 0) {
         this.snackbar.open('Please Number of Seats', 'End now', { duration: 1500 });
       }
       // else {

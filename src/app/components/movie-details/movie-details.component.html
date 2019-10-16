@@ -2,6 +2,23 @@
     <div class="image"> <a (click)="home()" class="pointer"><img src="../../../assets/book-it.jpg"
                 style="width: 75%"></a>
     </div>
+
+    <div class="search" fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <input placeholder="Do Online Booking For Any Movie..." style=" width: 229%; padding: 4%;">
+        </div>
+        <div class="button">
+            <button mat-raised-button color="primary">Search</button>
+        </div>
+        <div class="login">
+            <button mat-mini-fab style="background-color: darkolivegreen" [matMenuTriggerFor]="menu">
+                {{firstName | slice:0:1}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="profile()">{{firstName}}</button>
+                <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+            </mat-menu>
+        </div>
+    </div>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="space-between start" fxFill="10" fxLayoutGap="50px">
