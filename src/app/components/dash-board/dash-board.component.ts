@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Validators, FormControl } from '@angular/forms';
 import { Router } from "@angular/router";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServicesService } from '../../services/userServices/user-services.service';
@@ -11,6 +12,7 @@ import { DataServicesService } from "../../services/dataServices/data-services.s
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
+  movieName = new FormControl('', Validators.required);
   firstName = localStorage.getItem('firstName')
   imagesUrl: string[];
   details: any;
@@ -36,6 +38,18 @@ export class DashBoardComponent implements OnInit {
     // this.data.currentMessage.subscribe(message => this.message = message)
   }
 
+  Search() {
+    const requestObj = {
+      movieName: this.movieName.value
+    };
+    this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
+      this.data.changeMessage(data);
+      console.log("data",data);
+      
+      this.router.navigateByUrl('movieDetail')
+    })
+  }
+
   home() {
     this.router.navigateByUrl('');
   }
@@ -54,33 +68,12 @@ export class DashBoardComponent implements OnInit {
   }
 
   movies(test) {
-    // this.data = {
-    //   movieName: test
-    // }
     const requestObj = {
       movieName: test
     };
-    // var a = JSON.stringify(requestObj)
     this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
-      console.log("length", data);
-
-      // for (let i = 0; i <= data.result.length; i++) {
-      // localStorage.setItem('War', data.result[0].movieName)
-      // localStorage.setItem('Captain America', data.result[1].movieName)
-      // localStorage.setItem('Intersteller', data.result[2].movieName)
-      // localStorage.setItem('Captain Marval', data.result[3].movieName)
-      // localStorage.setItem('Batman', data.result[4].movieName)
-      // localStorage.setItem('Badla', data.result[5].movieName)
-      // localStorage.setItem('WarPoster', data.result[0].poster)
-      // localStorage.setItem('CaptainAmericaPoster', data.result[1].poster)
-      // localStorage.setItem('InterstellerPoster', data.result[2].poster)
-      // localStorage.setItem('CaptainMarvalPoster', data.result[3].poster)
-      // localStorage.setItem('BatmanPoster', data.result[4].poster)
-      // localStorage.setItem('BadlaPoster', data.result[5].poster)
-
       this.data.changeMessage(data);
       this.router.navigateByUrl('movieDetail')
-
     })
   }
 }

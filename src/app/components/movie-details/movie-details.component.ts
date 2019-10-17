@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServicesService } from '../../services/userServices/user-services.service';
 import { DataServicesService } from "../../services/dataServices/data-services.service";
@@ -12,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
+  name = new FormControl('', Validators.required);
   firstName = localStorage.getItem('firstName')
   message: any;
 
@@ -22,21 +24,22 @@ export class MovieDetailsComponent implements OnInit {
       this.message = message
     })
     console.log("get message ", this.message);
-
   }
 
   home() {
     this.router.navigateByUrl('');
   }
 
-  // trailer() {
-  //   const requestObj = {
-  //     movieName: this.message.result[0].movieName
-  //   }
-  //   this.service.moviePost('getTrailer', requestObj).subscribe((data: any) => {
-  //     console.log("data : ", data);
-  //   })
-  // }
+  Search() {
+    const requestObj = {
+      movieName: name
+    };
+    this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
+      this.data.changeMessage(data);
+      this.router.navigateByUrl('movieDetail')
+
+    })
+  }
 
   profile() {
     this.router.navigateByUrl('profile');
