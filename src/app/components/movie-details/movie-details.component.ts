@@ -38,6 +38,10 @@ export class MovieDetailsComponent implements OnInit {
   //   })
   // }
 
+  profile() {
+    this.router.navigateByUrl('profile');
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(TrailerDialogComponent, {
       width: '960px',

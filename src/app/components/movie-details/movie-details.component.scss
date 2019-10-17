@@ -3,11 +3,27 @@
     padding: 1%;
     background-color: rgb(115,201,81);
     //margin-bottom: 28%;
+}
 
+.card{
+    width: 100%;
+    //margin-top: 8%;
+    color: rgba(0,0,800,.87);
+    //margin-left: 3%;
+    box-shadow: 0 2px 1px -1px rgba(26, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    padding: -26% !important;
+    flex: auto;
+    min-width: 20px;
+    width: 350px;
 }
 
 .image{
-    margin-left: -79%;
+    margin-left: -9%;
 }
 
 .search{
