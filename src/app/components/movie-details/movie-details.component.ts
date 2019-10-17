@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  name = new FormControl('', Validators.required);
+  movieName = new FormControl('', Validators.required);
   firstName = localStorage.getItem('firstName')
   message: any;
 
@@ -32,12 +32,13 @@ export class MovieDetailsComponent implements OnInit {
 
   Search() {
     const requestObj = {
-      movieName: name
+      movieName: this.movieName.value
     };
     this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
       this.data.changeMessage(data);
+      console.log("data",data);
+      
       this.router.navigateByUrl('movieDetail')
-
     })
   }
 
