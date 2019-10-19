@@ -23,7 +23,6 @@ export class MovieDetailsComponent implements OnInit {
     this.data.currentMessage.subscribe(message => {
       this.message = message
     })
-    console.log("get message ", this.message);
   }
 
   home() {
@@ -36,7 +35,6 @@ export class MovieDetailsComponent implements OnInit {
     };
     this.service.moviePost('getMovie', requestObj).subscribe((data: any) => {
       this.data.changeMessage(data);
-      console.log("data",data);
       
       this.router.navigateByUrl('movieDetail')
     })
