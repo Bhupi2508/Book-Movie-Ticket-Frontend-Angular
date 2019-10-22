@@ -30,6 +30,15 @@ export class BookTicketComponent implements OnInit {
     }
   }
 
+  profile() {
+    this.router.navigateByUrl('profile');
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigateByUrl('login');
+  }
+
   home() {
     this.router.navigateByUrl('');
   }
