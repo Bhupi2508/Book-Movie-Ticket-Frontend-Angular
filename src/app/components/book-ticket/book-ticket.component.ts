@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataServicesService } from "../../services/dataServices/data-services.service";
 
 @Component({
   selector: 'app-book-ticket',
@@ -10,11 +11,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class BookTicketComponent implements OnInit {
   firstName = localStorage.getItem('firstName')
   lastName = localStorage.getItem('lastName')
+  message: any;
 
 
-  constructor(private router: Router, private snackbar: MatSnackBar) { }
+  constructor(private router: Router, private snackbar: MatSnackBar, private data: DataServicesService) { }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => {
+      this.message = message
+    })
   }
 
   takeData() {
