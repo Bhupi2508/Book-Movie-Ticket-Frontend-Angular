@@ -1,98 +1,82 @@
 <div [style.backgroundImage]="getBackgroundImageUrl()">
-    <mat-card class="card">
-        <b class="register">Register Form</b>
-        <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="-30px">
-            <!-- <div fxLayout="row" fxLayoutGap="5%"> -->
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>firstname</mat-label>
-                <mat-error *ngIf="firstName.invalid">{{firstNameError()}}</mat-error>
-                <input matInput placeholder="firstname" [formControl]="firstName">
-            </mat-form-field>
 
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>lastname</mat-label>
-                <mat-error *ngIf="lastName.invalid">{{lastNameError()}}</mat-error>
-                <input matInput placeholder="lastname" [formControl]="lastName">
-            </mat-form-field>
-            <!-- </div> -->
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>email</mat-label>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                <input matInput placeholder="email" [formControl]="email">
-            </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="10%">
+
+        <mat-card class="card">
+            <b class="register">Register Form</b>
+            <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="-30px">
+                <div fxLayout="row" fxLayoutGap="5%">
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>firstname</mat-label>
+                        <mat-error *ngIf="firstName.invalid">{{firstNameError()}}</mat-error>
+                        <input matInput placeholder="firstname" [formControl]="firstName">
+                    </mat-form-field>
+
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>lastname</mat-label>
+                        <mat-error *ngIf="lastName.invalid">{{lastNameError()}}</mat-error>
+                        <input matInput placeholder="lastname" [formControl]="lastName">
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="5%">
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>email</mat-label>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        <input matInput placeholder="email" [formControl]="email">
+                    </mat-form-field>
+
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>phone</mat-label>
+                        <input matInput placeholder="phone number" [formControl]='phone' required>
+                        <mat-error *ngIf="phone.invalid">{{mobilenumberError()}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="5%">
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>gender</mat-label>
+                        <mat-error *ngIf="gender.invalid">{{genderErrorMessage()}}</mat-error>
+                        <mat-select [formControl]='gender'>
+                            <mat-option value="male">male</mat-option>
+                            <mat-option value="female">female</mat-option>
+                            <mat-option value="others">others</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="mat-form-field-infix" appearance="outline">
+                        <mat-label>Date of Birth</mat-label>
+                        <mat-error *ngIf="dateofbirth.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
+                        <input matInput [matDatepicker]="picker" placeholder="dateofbirth" [formControl]="dateofbirth">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                    </mat-form-field>
+                </div>
 
                 <mat-form-field class="mat-form-field-infix" appearance="outline">
-                    <mat-label>phone</mat-label>
-                    <input matInput placeholder="phone number" [formControl]='phone' required>
-                    <mat-error *ngIf="phone.invalid">{{mobilenumberError()}}</mat-error>
+                    <mat-label>password</mat-label>
+                    <mat-error *ngIf="password.invalid">{{passwordErrorMessage()}}</mat-error>
+                    <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
+                    <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+                    </mat-icon>
                 </mat-form-field>
 
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>gender</mat-label>
-                <mat-error *ngIf="gender.invalid">{{genderErrorMessage()}}</mat-error>
-                <mat-select [formControl]='gender'>
-                    <mat-option value="male">male</mat-option>
-                    <mat-option value="female">female</mat-option>
-                    <mat-option value="others">others</mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>Date of Birth</mat-label>
-                <mat-error *ngIf="dateofbirth.invalid">{{DateOfBirthErrorMessage()}}</mat-error>
-                <input matInput [matDatepicker]="picker" placeholder="dateofbirth" [formControl]="dateofbirth">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field class="mat-form-field-infix" appearance="outline">
-                <mat-label>password</mat-label>
-                <mat-error *ngIf="password.invalid">{{passwordErrorMessage()}}</mat-error>
-                <input matInput placeholder="password" [formControl]="password" [type]="hide ? 'text' : 'password'">
-                <mat-icon class="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
-                </mat-icon>
-            </mat-form-field>
-
-            <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Submit</button>
-            <div>
-                <div class="ForRouterLinks">
-                    <a routerLink="/forgotPassword">Forgot Password?</a><a class="loginLink"
-                        routerLink="/login">Login</a>
+                <button class="SubmitButton" mat-raised-button color="primary" (click)="submit()">Submit</button>
+                <div>
+                    <div class="ForRouterLinks">
+                        <a routerLink="/forgotPassword">Forgot Password?</a><a class="loginLink"
+                            routerLink="/login">Login</a>
+                    </div>
                 </div>
             </div>
+        </mat-card>
+
+        <div fxLayout="column" fxLayoutGap="-60">
+            <div>Connect with us</div>
+            <div>
+            <share-buttons class="BigDiv" show="3"></share-buttons>
+            </div>
         </div>
-    </mat-card>
-    <div>
+    </div>
 
-        <!-- <button mdbBtn color="fb" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="facebook-f" class="left"></mdb-icon>
-            <span>Facebook</span>
-        </button>
-
-        <mat-icon>facebook</mat-icon>
-        
-        <a mdbBtn color="tw" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="twitter" class="left"></mdb-icon>
-            <span>Twitter</span>
-        </a>
-        
-        <a mdbBtn color="gplus" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="google-plus" class="left"></mdb-icon>
-            <span>Google+</span>
-        </a>
-        <span class="counter">22</span>
-
-        
-        <a mdbBtn color="li" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="linkedin-in" class="left"></mdb-icon>
-            <span>Linkedin</span>
-        </a>
-        <span class="counter">22</span>
-
-        
-        <a mdbBtn color="ins" class=" waves-light" mdbWavesEffect>
-            <mdb-icon fab icon="instagram" class="left"></mdb-icon>
-            <span>Instagram</span>
-        </a>
-    </div>  -->
 </div>

@@ -1,8 +1,8 @@
 .card{
-    width: 28%;
-    margin-top: 0%;
+    width: 51%;
+    margin-top: 4%;
     color: rgba(0,0,800,.87);
-    margin-left: 10%;
+    margin-left: 2%;
     box-shadow: 0 2px 1px -1px rgba(26, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 }
 
@@ -12,6 +12,12 @@
     flex: auto;
     min-width: 20px;
     width: 350px;
+}
+
+.BigDiv{
+    margin-left: 11%;
+    width: 100%;
+    margin-top: 120%;
 }
 
 .register{
