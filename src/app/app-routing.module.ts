@@ -11,6 +11,7 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import { CategoriesComponent } from './components/categories/categories.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { BookTicketComponent } from './components/book-ticket/book-ticket.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 
 const routes: Routes = [{
@@ -56,6 +57,10 @@ const routes: Routes = [{
 {
   path: 'bookTicket',
   component:BookTicketComponent
+},
+{
+  path: 'movies',
+  component:MoviesComponent
 }
 ];
 

@@ -1,6 +1,6 @@
 {
-  "name": "ook-movie-ticket-application",
-  "version": "0.1.0",
+  "name": "book-movie-ticket-application",
+  "version": "0.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

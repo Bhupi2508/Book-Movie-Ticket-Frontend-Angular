@@ -1,0 +1,60 @@
+.main{
+    border: 1px solid;
+    padding: 1%;
+    background-color: rgb(115,201,81);
+    margin-bottom: 1%;
+}
+
+.image{
+    margin-left: -125px;
+}
+
+.search{
+    position: relative;
+    margin-right: 26%;
+}
+
+.button{
+    margin-right: -19%;
+}
+
+.login{
+    margin-right: -156%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.footers{
+    border: 1px solid;
+    padding: 3%;
+    background-color: rgb(115,201,81);
+}
+
+.rowFlex{
+    margin-top: 14px;
+    margin-right: 6%;
+    margin-bottom: 6px;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch flex-end;
+    align-items: stretch;
+}
+
+.listName{
+    margin-left: 3%;
+    font-size: x-large;
+}
+
+.rowFlexList{
+    margin-top: 16px;
+    margin-right: -11%;
+    margin-bottom: 6px;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch flex-end;
+    align-items: stretch;
+}
