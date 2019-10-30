@@ -12,6 +12,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { BookTicketComponent } from './components/book-ticket/book-ticket.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { TicketPaymentComponent } from './components/ticket-payment/ticket-payment.component';
 
 
 const routes: Routes = [{
@@ -61,6 +62,10 @@ const routes: Routes = [{
 {
   path: 'movies',
   component:MoviesComponent
+},
+{
+  path:'payment',
+  component:TicketPaymentComponent
 }
 ];
 
