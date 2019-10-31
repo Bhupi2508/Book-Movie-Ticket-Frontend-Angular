@@ -39,6 +39,10 @@ export class BookTicketComponent implements OnInit {
     this.router.navigateByUrl('profile');
   }
 
+  payment() {
+    this.router.navigateByUrl('payment');
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('login');
