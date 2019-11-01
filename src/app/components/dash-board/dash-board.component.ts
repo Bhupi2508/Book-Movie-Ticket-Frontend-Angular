@@ -71,6 +71,10 @@ export class DashBoardComponent implements OnInit {
     this.router.navigateByUrl('movies');
   }
 
+  booking(){
+    this.router.navigateByUrl('payment');
+  }
+
   movies(test) {
     const requestObj = {
       movieName: test
