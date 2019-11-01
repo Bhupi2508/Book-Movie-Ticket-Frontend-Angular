@@ -8,7 +8,7 @@
             <input placeholder="Do Online Booking For Any Movie..." style=" width: 229%; padding: 5%;">
         </div>
         <div class="button">
-            <button mat-raised-button color="primary">Search</button>
+            <button mat-raised-button (click)="Search()" color="primary">Search</button>
         </div>
         <div class="login">
             <button mat-mini-fab style="background-color: darkolivegreen" [matMenuTriggerFor]="menu">
