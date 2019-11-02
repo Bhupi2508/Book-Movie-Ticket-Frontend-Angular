@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataServicesService } from "../../services/dataServices/data-services.service";
+import { UserServicesService } from 'src/app/services/userServices/user-services.service';
 
 @Component({
   selector: 'app-book-ticket',
@@ -14,7 +15,7 @@ export class BookTicketComponent implements OnInit {
   message: any;
 
 
-  constructor(private router: Router, private snackbar: MatSnackBar, private data: DataServicesService) { }
+  constructor(private service: UserServicesService, private router: Router, private snackbar: MatSnackBar, private data: DataServicesService) { }
 
   ngOnInit() {
     this.data.currentMessage.subscribe(message => {
@@ -40,7 +41,11 @@ export class BookTicketComponent implements OnInit {
   }
 
   payment() {
-    this.router.navigateByUrl('payment');
+    this.service.getMethod('getB').subscribe((data: any) => {
+      this.data.changeMessage(data);
+      this.router.navigateByUrl('payment');
+    })
+
   }
 
   logout() {
