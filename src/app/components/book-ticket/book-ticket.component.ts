@@ -12,9 +12,9 @@ import { UserServicesService } from 'src/app/services/userServices/user-services
 export class BookTicketComponent implements OnInit {
   firstName = localStorage.getItem('firstName')
   lastName = localStorage.getItem('lastName')
-  message: any; 
+  message: any;
   ReadOnlyStyleGuideNotes: boolean;
-  seat: any [];
+  seat: any[];
 
 
   constructor(private service: UserServicesService, private router: Router, private snackbar: MatSnackBar, private data: DataServicesService) { }
@@ -23,7 +23,7 @@ export class BookTicketComponent implements OnInit {
     this.data.currentMessage.subscribe(message => {
       this.message = message
     })
-    this.ReadOnlyStyleGuideNotes=true;
+    this.ReadOnlyStyleGuideNotes = true;
 
     this.payment()
   }
@@ -51,16 +51,16 @@ export class BookTicketComponent implements OnInit {
     };
     this.service.moviePost('getSeatBooked', requestObj).subscribe((data: any) => {
       console.log("data", data);
-      this.seat=data.result[0].bookedSeat[0];
+      this.seat = data.result[0].bookedSeat[0];
       console.log("data", this.seat);
 
       this.data.changeMessage(data);
-     // this.router.navigateByUrl('payment');
+      // this.router.navigateByUrl('payment');
     })
 
   }
 
-  
+
 
   logout() {
     localStorage.clear();
