@@ -50,9 +50,10 @@ export class BookTicketComponent implements OnInit {
       movieName: this.message.result[0].movieName
     };
     this.service.moviePost('getSeatBooked', requestObj).subscribe((data: any) => {
-      console.log("data", data);
-      this.seat = data.result[0].bookedSeat[0];
-      console.log("data", this.seat);
+      for (let i = 0; i < data.result[0].bookedSeat.length; i++) {
+        this.seat = data.result[0].bookedSeat[i]
+        console.log("this.seat", this.seat);
+      }
 
       this.data.changeMessage(data);
       // this.router.navigateByUrl('payment');
