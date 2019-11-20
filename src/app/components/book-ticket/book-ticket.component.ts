@@ -15,6 +15,7 @@ export class BookTicketComponent implements OnInit {
   message: any;
   ReadOnlyStyleGuideNotes: boolean;
   seat: any[];
+  newdata: any[];
 
 
   constructor(private service: UserServicesService, private router: Router, private snackbar: MatSnackBar, private data: DataServicesService) { }
@@ -23,6 +24,7 @@ export class BookTicketComponent implements OnInit {
     this.data.currentMessage.subscribe(message => {
       this.message = message
     })
+    
     this.ReadOnlyStyleGuideNotes = true;
 
     this.payment()
@@ -50,8 +52,14 @@ export class BookTicketComponent implements OnInit {
       movieName: this.message.result[0].movieName
     };
     this.service.moviePost('getSeatBooked', requestObj).subscribe((data: any) => {
+      console.log("gadsgdfasd==>",data);
+      this.newdata=data.result[0].bookedSeat;
+      
       for (let i = 0; i < data.result[0].bookedSeat.length; i++) {
         this.seat = data.result[0].bookedSeat[i]
+      //  if(this.seat===["A1","A2"]){
+      //   this.ReadOnlyStyleGuideNotes = true;
+      //  }
         console.log("this.seat", this.seat);
       }
 
